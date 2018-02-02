@@ -142,7 +142,7 @@ var arr = [];
 var sumaTotal = 0;
 ~~~
 
-### 3. Funciones Callback
+### 5. Funciones Callback
 
 Funciones que llaman a otras funciones, como parametro de estas. En el codigo se encuentra la siguiente funcion callback: 
 
@@ -150,9 +150,15 @@ Funciones que llaman a otras funciones, como parametro de estas. En el codigo se
 soloNumeros(longitud(numberCard))
 ~~~
 
-4. Funciones Expresions
+### 6. Funciones Expresions
 
-5. Funciones  Statement
+Funciones que son asignadas a variables. En el codigo se encuentra la siguiente:
+
+~~~js
+var creditCardNumber = onlyNumber(length(numberCard));
+~~~
+
+### 7. Funciones  Statement
 
 6. Funciones Clousure
 
