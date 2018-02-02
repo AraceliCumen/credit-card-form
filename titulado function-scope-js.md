@@ -1,1 +1,0 @@
-# Function Scope - Java Script
