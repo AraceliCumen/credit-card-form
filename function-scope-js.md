@@ -82,17 +82,30 @@ $(document).ready(function() {
 });
 ~~~
 
-1. Funciones Globales 
+### 1. Funciones Globales 
 
-Son las funciones globales dentro del contexto de ejecucion de window
+Son las funciones globales dentro del contexto de ejecucion de window. En el codigo se encuentra la siguiente funcion global:
 
 ~~~js
 $(document).ready(function() {});
 ~~~
 
-2. Funciones Locales
+### 2. Variables Globales
 
-Funciones que estan definidas dentro de otras funciones
+Variables que pueden ser llamadas en cualquier momento dentro del contexto de ejecucion global. Dentro del codigo encontramos las siguientes variables globales
+
+~~~js
+  var $inputCard = $('#card-number');
+  var $inputMonth = $('.input-month');
+  var $inputYear = $('.input-year');
+  var $buttonNext = $('#next');
+  var regexOnlyNumbers = /^[0-9]+$/;
+  var labelErrorOrSuccessMessages = $('label[for="card-number"]');
+~~~
+
+### 3. Funciones Locales
+
+Funciones que estan definidas dentro de otras funciones. En el codigo se encuentra las siguientes funciones locales:
 
 ~~~js
 function activeButton() {}
@@ -113,8 +126,29 @@ function isValidCreditCard() {}
 function isValidCreditCard() {}
 ~~~
 
-3. Funciones Callback
+### 4. Variables Locales
 
+- Dentro de la function soloNumeros tenemos:
+~~~js
+var regex = /^[0-9]+$/;
+~~~
+
+- Dentro de la function isValidCreditCard tenemos:
+~~~js
+var creditCardNumber
+~~~
+~~~js
+var arr = [];
+var sumaTotal = 0;
+~~~
+
+### 3. Funciones Callback
+
+Funciones que llaman a otras funciones, como parametro de estas. En el codigo se encuentra la siguiente funcion callback: 
+
+~~~js
+soloNumeros(longitud(numberCard))
+~~~
 
 4. Funciones Expresions
 
