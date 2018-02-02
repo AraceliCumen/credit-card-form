@@ -103,7 +103,7 @@ Variables que pueden ser llamadas en cualquier momento dentro del contexto de ej
   var labelErrorOrSuccessMessages = $('label[for="card-number"]');
 ~~~
 
-### 3. Funciones Locales
+### 3. Funciones Statment
 
 Funciones que estan definidas dentro de otras funciones. En el codigo se encuentra las siguientes funciones locales:
 
@@ -118,9 +118,6 @@ function longitud() {}
 ~~~
 ~~~js
 function soloNumeros() {}
-~~~
-~~~js
-function isValidCreditCard() {}
 ~~~
 ~~~js
 function isValidCreditCard() {}
@@ -147,6 +144,8 @@ var sumaTotal = 0;
 Funciones que llaman a otras funciones, como parametro de estas. En el codigo se encuentra la siguiente funcion callback: 
 
 ~~~js
+$(document).ready(function() {})
+$inputCard.on('input', function() {})
 soloNumeros(longitud(numberCard))
 ~~~
 
@@ -158,12 +157,34 @@ Funciones que son asignadas a variables. En el codigo se encuentra la siguiente:
 var creditCardNumber = onlyNumber(length(numberCard));
 ~~~
 
-### 7. Funciones  Statement
+### 8. Funciones Clousure
 
-6. Funciones Clousure
+Memoria que tienen las funciones para recordar el espcacio donde fueron creadas. En el codigo encontramos las siguiente
 
-7. Funciones que forman parte de la fila de ejecucion (stack execution)
+- activeButton, tiene un scope global.
+- desactiveButton, tiene global.
+- longitud, tiene un scope global.
+- SoloNumeros, tiene un scope global.
+- isValidCreditCard, tiene un scope global.
 
-8. Funciones forman parte de la cola de eventos (event queue)
+
+### 9. Funciones que forman parte de la fila de ejecucion (stack execution)
+
+La pila de ejecucón o stack execution, se refiere al orden en el que se cargan se ejecutan las funciones en el navegador. Para el codigo tenemos:
+
+- $(document).ready(function(){})
+- $inputCard.on('input', function() {})
+- isValidCreditCard()
+- function soloNumeros(input)
+- function longitud(input)
+- function activeButton()
+- function desactiveButton()
+
+### 8. Funciones forman parte de la cola de eventos (event queue)
+
+Son las aquellas funciones que se cargan solo cuando se produce el evento, y en este caso seria la función anonima que escucha el evento input. Para el codigo tenemos: 
+
+- $(document).ready(function(){})
+- $inputCard.on('input', function() {})
 
 
